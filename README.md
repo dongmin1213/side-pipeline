@@ -1,0 +1,47 @@
+# content-engine v0.2 — 자동 콘텐츠 파이프라인
+
+리서치 → 대본(정책 검사) → **사람 승인** → 음성 → 클립 → 조립·자막 → **사람 QA** → 업로드(비공개).
+기획: `../research/09-final-proposal-v3.md` §D · 코드 리뷰 반영: `../research/10-codex-code-review.md` (C1~C3, I1~I16 대부분)
+
+## 단계 (`run_episode.py` 순서)
+| # | 스크립트 | 산출물 (`episodes/<topic>-<lang>[-smoke]/`) | 비용 | 게이트 |
+|---|---|---|---|---|
+| 0 | `00_check_env.py [--paid] [--publish]` | — | 0 | 실행기가 항상 먼저 실행 |
+| 1 | `10_research.py` | `facts.json` — 수치마다 **실제로 열어본 URL** + 날짜. URL 없는 수치는 제거 | 0 (Claude Max 구독, `claude -p` + 웹 도구) | 출처 < 4 또는 수치 < 8 이면 중단 |
+| 1.5 | `15_verify_sources.py` | `source_report.json` — 모든 출처 URL GET 검사, dead 출처 의존 수치 제거 | 0 | 살아있는 출처 < 4 이면 중단 |
+| 2 | `20_script.py` | `script.json`(10초 블록 N개, fact_refs), `meta.json`, `policy_check.json`. **청크 생성**(개요 1회 + 12블록 단위, `script_parts.json` 캐시) | 0 | 스키마+정책 실패 시 해당 청크만 재작성, 그래도 실패면 **exit 2** |
+| 2.2 | `22_patch_facts.py` | 리뷰어 팩트체크 정정(`config/corrections/<topic>.json`) → facts 주석 + 걸리는 청크만 재작성 | 0 | 실행 후 `20_script.py` 재실행으로 재검사 |
+| 3 | `25_approve_script.py` | `approval_request.json` → 사람이 `APPROVE_SCRIPT` 에 `<이름> <묶음해시8자리>` | 0 | **유료 단계 진입 게이트** — 묶음 = 대본+meta+음성ID+스타일키+cap+smoke |
+| 9 | `90_review_page.py` | `review.html` — 검토본 페이지(대본·수치·출처 상태·정정·승인 명령) → Artifact 발행 | 0 | 승인 전 사람 검토 자료 |
+| 4 | `40_voice.py` | `voice.json` — Seed Audio, ffprobe 길이 검증 | 크레딧 | 승인 필요 |
+| 5 | `30_visuals.py` | `visuals.json` — 스타일 키 + 클립(블록 상태 pending/running/succeeded/failed) | 크레딧 | 승인 + 음성 완료 필요(스킬 Phase 4→5) |
+| 6 | `50_assemble.py` | `final_raw.mp4` → `final.mp4`(자막) → `short.mp4`(세로). 기본 `assembly.mode: local_trim`(블록 = 오디오+0.4초, ffmpeg concat, 크레딧 0) / `server`(explainer_video 고정 10초, 크레딧 1) | 0 또는 1 | 1:1 매핑·길이·Shorts 규격 검증 |
+| 7 | `60_qa.py` | `qa_request.json` → `qa.json`(검토본 해시·승인자) | 0 | local: `APPROVE_QA` 파일 / telegram: 허용 user id + 해시 |
+| 8 | `70_publish.py` | `publish.json` — 자산별 체크포인트, **비공개 고정** | 0 | qa 해시 = 현재 산출물 |
+
+모든 유료 호출은 `ledger.jsonl`(append-only)에 제출·완료·실패·초·토큰이 남는다 → 기획서 §B3 원가 실측.
+
+## 실행 순서 (리뷰 권장: 무비용 → 2블록 계약 테스트 → 실측)
+```bash
+cd pipeline && source .venv/bin/activate
+python run_episode.py --topic pasteur --lang ko --until 2          # 무비용: 리서치 + 대본 + 정책 검사
+# 대본 검토 → echo '홍길동' > episodes/pasteur-ko/APPROVE_SCRIPT
+python run_episode.py --topic pasteur --lang ko --smoke --until 6   # 유료 계약 테스트: 음성 2 → 클립 2 → 조립 1 (cap 6회)
+python run_episode.py --topic pasteur --lang ko --from 3 --until 7  # 승인 → 전체 제작 → QA
+```
+
+## 준비물 (사용자) — 단계별 상세 절차는 **`SETUP.md`**
+| 항목 | 방법 | 상태 |
+|---|---|---|
+| Higgsfield 로그인·워크스페이스 | `higgsfield auth login` → `hf workspace set <id>` (브라우저 OAuth, 사용자 직접) | **미완** |
+| 한국어 음성 선택 | `higgsfield voices list --json` → `config/pipeline.yaml languages.ko.voice_id` | 미완 |
+| 스타일 키 | smoke 첫 실행이 샘플 생성 → 마음에 들면 `style.style_key_job_id` 고정 | 미완 |
+| Claude Code | 설치됨(`claude -p` 동작 확인) — API 키 불필요 | 완료 |
+| ffmpeg-full | 설치됨(libass 자막, 한글 렌더 확인) — `lib/state.py` 가 PATH 우선 적용 | 완료 |
+| YouTube OAuth | Google Cloud 프로젝트 → 데스크톱 앱 자격증명 → `config/yt_client_secret.json`; **API 심사 전엔 비공개 업로드만** | 미완 |
+| Telegram(선택) | 봇 토큰·chat id·`qa.telegram_allowed_user_ids`; 없으면 `qa.mode: local` | 선택 |
+| DART(선택) | opendart.fss.or.kr 키 → `research.sources.dart: true` (상장사만) | 선택 |
+
+## 아직 안 된 것 (리뷰 10 기준, 정직하게)
+- EN human-voice 로컬 조립(I10), D7/D28 성과 측정(M3), YouTube resumable 세션 URI 재개(I13 일부), 네이버 클립·TikTok 수동 게시 체크리스트, 15분 초과 편의 파트 분할 조립.
+- **실제 계정으로 end-to-end 유료 실행은 아직 0회.** 첫 실행은 반드시 `--smoke`.

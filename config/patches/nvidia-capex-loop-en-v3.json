@@ -1,0 +1,83 @@
+{
+  "note": "research/16 (2nd Claude, FIX 10건) 반영: Shorts 재배열(고객 집중 9·10을 5·6으로), 청크 경계 이정표(13·37·49), 파편·오독 문장(1·3·4·56), 귀속 어휘(8→12·34·36·57), 콜백(43), 씬 합쳐짐/연결선(29·59·18), 결론(60), 설명란 부정문 정리.",
+  "reorder": {
+    "map": {
+      "5": 9,
+      "6": 10,
+      "7": 11,
+      "8": 12,
+      "9": 5,
+      "10": 6,
+      "11": 7,
+      "12": 8
+    }
+  },
+  "blocks": {
+    "1": {
+      "narration": "In the year to June 2026, Amazon spent about 169 billion dollars on capex, more than its operations generated."
+    },
+    "3": {
+      "narration": "Add Microsoft and the four reported about 539 billion of capex, each on its own definition. NVIDIA booked 278 billion."
+    },
+    "4": {
+      "narration": "That is 51.5 percent. No filing says how much of that capex went to NVIDIA. The ratio is a comparison, not a share."
+    },
+    "5": {
+      "narration": "In fiscal 2026, one direct customer was 22 percent of NVIDIA's revenue, another was 14 percent. A quarter later the list grew longer."
+    },
+    "8": {
+      "narration": "Matched to the June quarter, the ratio read 52 percent. NVIDIA's filing gave the hyperscaler percentage; the four companies' filings gave the capex."
+    },
+    "12": {
+      "narration": "Compute delivered about 162 billion and networking about 31 billion. The same filing gives no customer names, only percentages of revenue."
+    },
+    "13": {
+      "narration": "Back to late October 2025. Microsoft, Alphabet, Meta and Amazon each disclosed a quarter of capex; NVIDIA's matching quarter had ended October 26."
+    },
+    "18": {
+      "scene_prompt": "flat isometric editorial infographic, muted navy and amber palette, paper-grain texture, clean geometric shapes, no faces, no text, no logos, consistent soft lighting. SCENE: an isometric split hall; on the left, rows of server-rack cubes fill the floor; on the right, a stack of coins rises to nearly the same height; a narrow a clear gap separates the two halves. AUDIO: ambient only. NEGATIVE: photorealism, real people, celebrity likeness, brand logos, on-screen text, captions, watermark, lip-sync"
+    },
+    "25": {
+      "narration": "Alphabet's first-quarter 2026 capital spending was about 35.7 billion, up from 27.9 billion in the quarter before."
+    },
+    "29": {
+      "scene_prompt": "flat isometric editorial infographic, muted navy and amber palette, paper-grain texture, clean geometric shapes, no faces, no text, no logos, consistent soft lighting. SCENE: four amber crate columns of unequal height, each on its own plinth in a row, a fourth shorter column sliding into place beside three taller ones; a wide empty plinth waits to the right; nothing links the columns. AUDIO: ambient only. NEGATIVE: photorealism, real people, celebrity likeness, brand logos, on-screen text, captions, watermark, lip-sync"
+    },
+    "34": {
+      "narration": "The four companies' June-quarter capex totaled about 170.1 billion. NVIDIA's July-quarter data center revenue came to 52 percent of that."
+    },
+    "36": {
+      "narration": "Hyperscalers accounted for about 48.7 billion of that revenue. AI clouds, industrial and enterprise customers made up the rest."
+    },
+    "37": {
+      "narration": "Now the other side of the ledger: cash flow, leases and debt. Alphabet's June-quarter free cash flow was negative 5.9 billion dollars."
+    },
+    "43": {
+      "narration": "The debt line from the opening: Meta's long-term debt was 58.7 billion in March and 83.7 billion by June."
+    },
+    "49": {
+      "narration": "Last, the budgets. In January, Meta guided 115 to 135 billion dollars of capital spending for the year. Revised outlooks followed."
+    },
+    "50": {
+      "narration": "In April both ends rose. In July only the floor moved, leaving 130 to 145 billion as the range."
+    },
+    "56": {
+      "narration": "That higher range arrived with Google Cloud's June quarter, when revenue there grew 82 percent and backlog reached about 514 billion."
+    },
+    "57": {
+      "narration": "Added together, the four budgets fall between 720 and 745 billion. NVIDIA's own filing sorts customers into categories of its own."
+    },
+    "59": {
+      "scene_prompt": "flat isometric editorial infographic, muted navy and amber palette, paper-grain texture, clean geometric shapes, no faces, no text, no logos, consistent soft lighting. SCENE: a single amber column with a thin navy error band at its cap on one plinth; on a separate plinth to the left, four small dials each turned to a different angle; a clear gap and no lines between the dials and the column. AUDIO: ambient only. NEGATIVE: photorealism, real people, celebrity likeness, brand logos, on-screen text, captions, watermark, lip-sync"
+    },
+    "60": {
+      "narration": "A supplier's outlook rests on customer budgets that keep moving. The filings give the balances. They do not say who financed what."
+    }
+  },
+  "description_replace": [
+    [
+      "the ratios compare scale rather than measuring payments to NVIDIA or NVIDIA's share of that spending",
+      "the ratios compare scale; they do not measure what NVIDIA received, nor what part of that spending was NVIDIA's"
+    ]
+  ]
+}

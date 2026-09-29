@@ -1,0 +1,63 @@
+{
+  "name": "content-engine (v0)",
+  "nodes": [
+    {
+      "parameters": {"rule": {"interval": [{"field": "cronExpression", "expression": "0 6 * * *"}]}},
+      "name": "Daily 06:00",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [0, 0]
+    },
+    {
+      "parameters": {
+        "command": "cd /Users/ddong8/Desktop/side/pipeline && .venv/bin/python -c \"import yaml;t=[x for x in yaml.safe_load(open('config/topics_kr.yaml'))['topics'] if x['status']=='queued'];print(t[0]['id'] if t else '')\""
+      },
+      "name": "Next queued topic",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [220, 0]
+    },
+    {
+      "parameters": {"conditions": {"string": [{"value1": "={{ $json.stdout.trim() }}", "operation": "isNotEmpty"}]}},
+      "name": "Has topic?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [440, 0]
+    },
+    {
+      "parameters": {
+        "command": "cd /Users/ddong8/Desktop/side/pipeline && .venv/bin/python run_episode.py --topic {{ $json.stdout.trim() }} --lang ko --until 5"
+      },
+      "name": "Produce (1→5)",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [660, -80]
+    },
+    {
+      "parameters": {
+        "command": "cd /Users/ddong8/Desktop/side/pipeline && .venv/bin/python run_episode.py --topic {{ $('Next queued topic').item.json.stdout.trim() }} --lang ko --from 6 --until 7"
+      },
+      "name": "QA wait → Publish (6→7)",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [880, -80]
+    },
+    {
+      "parameters": {
+        "command": "cd /Users/ddong8/Desktop/side/pipeline && .venv/bin/python - <<'EOF'\nimport yaml,sys\np='config/topics_kr.yaml';d=yaml.safe_load(open(p))\ntid='{{ $('Next queued topic').item.json.stdout.trim() }}'\nfor t in d['topics']:\n    if t['id']==tid: t['status']='published'\nyaml.safe_dump(d,open(p,'w'),allow_unicode=True,sort_keys=False)\nEOF"
+      },
+      "name": "Mark published",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [1100, -80]
+    }
+  ],
+  "connections": {
+    "Daily 06:00": {"main": [[{"node": "Next queued topic", "type": "main", "index": 0}]]},
+    "Next queued topic": {"main": [[{"node": "Has topic?", "type": "main", "index": 0}]]},
+    "Has topic?": {"main": [[{"node": "Produce (1→5)", "type": "main", "index": 0}], []]},
+    "Produce (1→5)": {"main": [[{"node": "QA wait → Publish (6→7)", "type": "main", "index": 0}]]},
+    "QA wait → Publish (6→7)": {"main": [[{"node": "Mark published", "type": "main", "index": 0}]]}
+  },
+  "settings": {"executionOrder": "v1", "timezone": "Asia/Seoul"}
+}

@@ -1,0 +1,11 @@
+{
+  "note": "research/19 Opus N1: 40이 32의 제3자 귀속을 반복 → 주장 삭제, SEC 수치만. Codex 19 SIGN 범위 내(주장 제거만).",
+  "blocks": {
+    "40": {
+      "narration": "Amazon's cloud unit, AWS, posted quarterly revenue of 42.2 billion, up 37 percent from a year earlier.",
+      "fact_refs": [
+        "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000024/amzn-20260630xex991.htm"
+      ]
+    }
+  }
+}

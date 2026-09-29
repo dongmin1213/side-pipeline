@@ -1,0 +1,150 @@
+{
+  "note": "research/15 (Codex NO SIGN) + research/17 (Opus FIX 5) 반영. Meta Q2 +85→+83 percent (SEC XBRL 31,078M vs 17,012M), Amazon 220B·AWS 백로그 496B는 제3자 녹취록 명시, 4사 전망 합계(Amazon 220 포함) 제거, 52 percent 비율 정체 분리, 재분류 설명, 제목 100자 이내·Data Center 명시, 씬 5개, 색 코드 통일, 설명란 Sources 라벨.",
+  "title": "Four Companies' Capex: $539B. NVIDIA Data Center Revenue: $278B. The Filings Don't Connect Them.",
+  "blocks": {
+    "2": {
+      "fact_refs": [
+        "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Second-Quarter-2026-Results/default.aspx",
+        "https://s206.q4cdn.com/479360582/files/doc_events/2026/Jul/22/2026_Q2_Earnings_Transcript.pdf",
+        "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-First-Quarter-2026-Results/default.aspx"
+      ]
+    },
+    "3": {
+      "narration": "With Microsoft, the four reported about 539 billion of capex, each defined differently. NVIDIA's data center revenue was 278 billion.",
+      "fact_refs": [
+        "https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q4",
+        "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000066/googexhibit991q22026.htm",
+        "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000024/amzn-20260630xex991.htm",
+        "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Second-Quarter-2026-Results/default.aspx",
+        "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/R67.htm",
+        "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000230/nvda-20251026.htm",
+        "https://www.sec.gov/Archives/edgar/data/0001045810/000104581026000052/nvda-20260426.htm"
+      ]
+    },
+    "4": {
+      "fact_refs": [
+        "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000230/nvda-20251026.htm",
+        "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-fourth-quarter-and-fiscal-2026",
+        "https://www.sec.gov/Archives/edgar/data/0001045810/000104581026000052/nvda-20260426.htm",
+        "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/R67.htm",
+        "https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q2",
+        "https://s206.q4cdn.com/479360582/files/doc_events/2026/Jul/22/2026_Q2_Earnings_Transcript.pdf"
+      ]
+    },
+    "7": {
+      "narration": "That quarter's filing put hyperscalers near half of data center sales. NVIDIA later moved a customer into that category, recasting it to about 57 percent.",
+      "fact_refs": [
+        "https://www.sec.gov/Archives/edgar/data/0001045810/000104581026000052/nvda-20260426.htm",
+        "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm",
+        "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/R67.htm"
+      ]
+    },
+    "8": {
+      "narration": "Matched to the June quarter, the same comparison read 52 percent. The revenue and the capex sit in separate filings; none links them."
+    },
+    "10": {
+      "narration": "NVIDIA's books show about 216 billion of revenue in its fiscal 2026, about nine-tenths of it from its Data Center platform."
+    },
+    "15": {
+      "narration": "Cash paid for property and equipment was lower, at 19.4 billion. Of total capex, Hood said, roughly half went to short-lived GPUs and CPUs."
+    },
+    "18": {
+      "scene_prompt": "flat isometric editorial infographic, muted navy and amber palette, paper-grain texture, clean geometric shapes, no faces, no text, no logos, consistent soft lighting. SCENE: an isometric split hall; on the left, rows of server-rack cubes fill the floor; on the right, a stack of coins rises to nearly the same height; a narrow, clear gap separates the two halves. AUDIO: ambient only. NEGATIVE: photorealism, real people, celebrity likeness, brand logos, on-screen text, captions, watermark, lip-sync"
+    },
+    "19": {
+      "scene_prompt": "flat isometric editorial infographic, muted navy and amber palette, paper-grain texture, clean geometric shapes, no faces, no text, no logos, consistent soft lighting. SCENE: four amber cube stacks on separate pedestals in a row and, on a raised step to the right, one navy stack a little under half the group's combined height; a dashed vertical line marks the offset between the two baselines. AUDIO: ambient only. NEGATIVE: photorealism, real people, celebrity likeness, brand logos, on-screen text, captions, watermark, lip-sync"
+    },
+    "22": {
+      "narration": "Cash spent on property and equipment climbed to 29.9 billion. Of total capex, Hood said, short-lived GPUs and CPUs now took about two-thirds."
+    },
+    "25": {
+      "scene_prompt": "flat isometric editorial infographic, muted navy and amber palette, paper-grain texture, clean geometric shapes, no faces, no text, no logos, consistent soft lighting. SCENE: an isometric construction yard where geometric cranes stack tall amber server crates onto a fresh platform; beside it a faded navy stack from the quarter before stands about three quarters as high; soft shadows on paper-grain ground. AUDIO: ambient only. NEGATIVE: photorealism, real people, celebrity likeness, brand logos, on-screen text, captions, watermark, lip-sync"
+    },
+    "30": {
+      "scene_prompt": "flat isometric editorial infographic, muted navy and amber palette, paper-grain texture, clean geometric shapes, no faces, no text, no logos, consistent soft lighting. SCENE: the four amber crate columns stand on their separate plinths in a row; on the wide plinth to the right, a navy stack of chip trays rises a bit over half the group's combined height, its baseline set one calendar notch further along; clear gaps, nothing links them. AUDIO: ambient only. NEGATIVE: photorealism, real people, celebrity likeness, brand logos, on-screen text, captions, watermark, lip-sync"
+    },
+    "31": {
+      "narration": "By the June quarter, Alphabet's capex reached about 44.9 billion, double a year earlier. Meta's, with lease principal, rose about 83 percent.",
+      "fact_refs": [
+        "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000066/googexhibit991q22026.htm",
+        "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Second-Quarter-2026-Results/default.aspx",
+        "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-First-Quarter-2026-Results/default.aspx",
+        "https://investor.atmeta.com/investor-news/press-release-details/2025/Meta-Reports-Second-Quarter-2025-Results/default.aspx"
+      ]
+    },
+    "32": {
+      "narration": "Amazon's net capex rose 69 percent, to about 53.1 billion. A published transcript has its CFO tying it to AWS and AI."
+    },
+    "36": {
+      "scene_prompt": "flat isometric editorial infographic, muted navy and amber palette, paper-grain texture, clean geometric shapes, no faces, no text, no logos, consistent soft lighting. SCENE: the navy tower separates into two adjacent unlabeled blocks on one plinth, the left slightly larger than the right; plain blank tiles lie before each block; no buildings, campuses or connectors. AUDIO: ambient only. NEGATIVE: photorealism, real people, celebrity likeness, brand logos, on-screen text, captions, watermark, lip-sync"
+    },
+    "41": {
+      "narration": "A third-party call transcript puts the AWS backlog at 496 billion. Meta's entire quarter produced revenue of 60.8 billion.",
+      "fact_refs": [
+        "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000024/amzn-20260630xex991.htm",
+        "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Second-Quarter-2026-Results/default.aspx",
+        "https://www.fool.com/earnings/call-transcripts/2026/08/07/amazon-amzn-q2-2026-earnings-call-transcript/"
+      ]
+    },
+    "43": {
+      "fact_refs": [
+        "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Second-Quarter-2026-Results/default.aspx",
+        "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-First-Quarter-2026-Results/default.aspx"
+      ]
+    },
+    "51": {
+      "narration": "In February, Amazon forecast about 200 billion. A third-party transcript of its July call has Andy Jassy near 220 billion, citing memory costs.",
+      "fact_refs": [
+        "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000002/amzn-20251231xex991.htm",
+        "https://www.fool.com/earnings/call-transcripts/2026/08/07/amazon-amzn-q2-2026-earnings-call-transcript/"
+      ]
+    },
+    "52": {
+      "narration": "Microsoft's figure went down instead. In April, Amy Hood put calendar-year capex near 190 billion, about 25 billion from component pricing.",
+      "fact_refs": [
+        "https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q3"
+      ]
+    },
+    "54": {
+      "narration": "That call also moved building depreciation to 25 years from 15, effective fiscal 2027. Hood expected capex to rise year over year."
+    },
+    "55": {
+      "narration": "Alphabet CFO Anat Ashkenazi raised its range to 195 to 205 billion. She said spending would increase significantly the year after."
+    },
+    "56": {
+      "narration": "On the earnings call, that higher range came with Google Cloud growing 82 percent and a backlog of about 514 billion.",
+      "fact_refs": [
+        "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000066/googexhibit991q22026.htm",
+        "https://s206.q4cdn.com/479360582/files/doc_events/2026/Jul/22/2026_Q2_Earnings_Transcript.pdf"
+      ]
+    },
+    "57": {
+      "narration": "These forecasts use different spending definitions. None says how much of it, if any, would become NVIDIA revenue.",
+      "scene_prompt": "flat isometric editorial infographic, muted navy and amber palette, paper-grain texture, clean geometric shapes, no faces, no text, no logos, consistent soft lighting. SCENE: four navy bars of unequal height standing apart on four separate plinths, each topped by its own thin amber range band; nothing stands beside them. AUDIO: ambient only. NEGATIVE: photorealism, real people, celebrity likeness, brand logos, on-screen text, captions, watermark, lip-sync"
+    },
+    "58": {
+      "scene_prompt": "flat isometric editorial infographic, muted navy and amber palette, paper-grain texture, clean geometric shapes, no faces, no text, no logos, consistent soft lighting. SCENE: two navy bars of the same category on one plinth, the newer one about two and a half times as tall as the faded earlier one; soft shadows on paper grain. AUDIO: ambient only. NEGATIVE: photorealism, real people, celebrity likeness, brand logos, on-screen text, captions, watermark, lip-sync"
+    },
+    "59": {
+      "narration": "NVIDIA guided its next quarter to 108 billion of revenue, plus or minus 2 percent. That outlook is its own, separate from these comparisons.",
+      "scene_prompt": "flat isometric editorial infographic, muted navy and amber palette, paper-grain texture, clean geometric shapes, no faces, no text, no logos, consistent soft lighting. SCENE: a single navy column with a thin amber error band at its cap on one plinth; on a separate plinth to the left, four small dials each turned to a different angle; a clear gap and no lines between the dials and the column. AUDIO: ambient only. NEGATIVE: photorealism, real people, celebrity likeness, brand logos, on-screen text, captions, watermark, lip-sync"
+    },
+    "60": {
+      "narration": "The companies report spending, cash flow and debt separately. None of it shows what went to NVIDIA, or who financed which purchases."
+    }
+  },
+  "description_replace": [
+    [
+      "the ratios compare scale; they do not measure what NVIDIA received, nor what part of that spending was NVIDIA's, and company forecasts are separated from reported results.",
+      "the ratios compare scale; they do not measure what NVIDIA received, nor what part of that spending was NVIDIA's. Company forecasts are kept separate from reported results."
+    ],
+    [
+      "Sources are SEC filings, earnings releases and earnings-call remarks; call remarks are labeled.",
+      "Sources include SEC filings, company releases, official call transcripts and identified third-party transcripts; third-party figures are labeled as such."
+    ],
+    [
+      "출처:",
+      "Sources:"
+    ]
+  ]
+}

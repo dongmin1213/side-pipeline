@@ -1,0 +1,86 @@
+# content-engine 설정 (v0.2 — Codex 코드 리뷰 반영)
+project: side-content-engine
+
+llm:
+  backend: claude_code        # claude_code (claude -p, Max 구독, 키 불필요) | anthropic_api
+  claude_code_model: claude-opus-5-5   # `claude -p --model` (Max 구독). 2026-09-24 사용자 지정
+  model: claude-sonnet-5      # anthropic_api 일 때만
+  research_tools: [WebSearch, WebFetch]   # claude_code 리서치가 실제 웹을 읽음
+  research_max_turns: 25
+
+languages:
+  ko:
+    enabled: true
+    voice_id: ""              # higgsfield voices list --json 에서 선택 후 고정
+    voice_type: preset
+    speech_rate: 1.0
+    subtitle: true
+  en:
+    enabled: false            # EN 파일럿(월 2편, 사람 성우) — 별도 주제 풀. 켜기 전 09 §D1 확인
+    voice_mode: human
+    voice_id: ""
+    voice_type: preset
+
+episode:
+  duration_minutes: 10        # explainer_video 서버 조립은 스킬 문서상 1~10분. 더 길면 파트 분할 후 ffmpeg concat
+  block_seconds: 10
+  aspect: "16:9"
+  resolution: "720p"
+  shorts:
+    enabled: true
+    seconds: 75
+    aspect: "9:16"
+
+smoke:                        # 첫 유료 계약 테스트: 오디오 2 → 클립 2 → 조립 1 (리뷰 권장 순서)
+  blocks: 2
+
+assembly:
+  mode: local_trim            # local_trim(기본: 블록 길이 = 오디오+0.4초, 리뷰 12/14 §5) | server(explainer_video 고정 10초)
+
+style:
+  style_key_job_id: ""        # 승인된 스타일 키(첫 실행에서 샘플 생성 → 사용자 선택 → 여기 고정)
+  style_descriptor: >-
+    flat isometric editorial infographic, muted navy and amber palette, paper-grain texture,
+    clean geometric shapes, no faces, no text, no logos, consistent soft lighting
+  negative: >-
+    photorealism, real people, celebrity likeness, brand logos, on-screen text, captions, watermark, lip-sync
+  image_model: nano_banana_2
+  video_model: gemini_omni
+
+research:
+  sources:
+    dart: false               # DART_API_KEY 있으면 true (상장사만 의미 있음)
+    edgar: false
+    web: true                 # claude_code 백엔드의 WebSearch/WebFetch 로 원문 수집
+  min_sources: 4
+  require_verified_facts: true   # source URL 없는 수치는 facts 에서 제거
+
+policy:
+  forbid_advice: true
+  forbid_expert_persona: true
+  forbid_real_person_voice: true
+  require_sources_in_description: true
+  min_unique_numbers: 10
+  forbid_emotional_manipulation_terms: ["충격", "경악", "소름", "긴급", "폭탄", "멸망", "끔찍"]
+  real_person_names: ["최명재", "Choi Myung-jae", "신격호", "윤덕병"]   # 씬 프롬프트에 등장 금지 (초상 우회 차단). 편별로 추가
+
+qa:
+  mode: local                 # local (episodes/<id>/APPROVE 파일 생성으로 승인) | telegram | discord
+  telegram_allowed_user_ids: []   # 승인 권한 있는 Telegram user id 목록 (필수, C2)
+  discord_allowed_user_ids: []    # 승인 권한 있는 Discord user id 목록 (필수, C2)
+  review_minutes_budget: 30
+
+budget:                       # 유료 단계 hard cap (I7). 초과 시 중단
+  max_hf_calls_per_episode: 140
+  max_hf_calls_smoke: 6
+
+publish:
+  youtube:
+    enabled: false            # OAuth 준비 후 true. 첫 테스트는 private_only=true 고정
+    private_only: true        # true 면 절대 public 전환 시도 안 함 (I14)
+    category_id: "27"
+    default_tags: ["기업분석", "경제", "재무제표"]
+  tiktok:
+    enabled: false
+  naver_clip:
+    enabled: false

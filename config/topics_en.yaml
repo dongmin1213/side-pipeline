@@ -1,0 +1,31 @@
+# EN topic pool — "AI bubble / Big Tech by the numbers" (06 v4 §6: the only EN topic where small channels hit in the last 120 days).
+# Data-first: SEC EDGAR filings (free, no key), earnings releases, company IR. Faceless narration must NOT present as a human expert
+# giving financial advice (YouTube 'AI personas in sensitive topics' policy) — explain filings, no recommendations.
+topics:
+  - id: nvidia-capex-loop
+    company: NVIDIA (and its largest customers)
+    dart_name: ""
+    angle: "How much of NVIDIA's revenue is funded by its customers' capex — Microsoft, Alphabet, Amazon, Meta capex vs NVIDIA data-center revenue, quarter by quarter from 10-Q/10-K filings"
+    keywords: ["NVIDIA 10-Q data center revenue", "Microsoft capital expenditures FY2026 10-K", "Alphabet capex 2026 10-Q", "Meta capital expenditures 2026", "hyperscaler capex NVIDIA revenue share"]
+    status: queued
+    # review 14 (2nd Claude): hook B, title, warning phrase, shorts range
+    title_override: "The $539 Billion Capex Loop: NVIDIA's Biggest Customers Are Starting to Borrow"
+    shorts_override: [1, 8]
+    opening_blocks:
+      - "In the year to June 2026, Amazon made about 161 billion dollars from operations and spent 169 billion on capex."
+      - "Meta's long-term debt rose from 58.7 to 83.7 billion in one quarter. Alphabet's free cash flow went negative: minus 5.9 billion."
+      - "Where is that money going? Set the four buyers' capex beside NVIDIA's data center revenue, quarter by quarter, and watch the ratio."
+    required_phrases:
+      - "No filing says how much of that capex went to NVIDIA. The ratio is a comparison, not a share."
+  - id: openai-microsoft-money
+    company: OpenAI / Microsoft
+    dart_name: ""
+    angle: "Follow the money: Microsoft's disclosed OpenAI investment, Azure commitments, and how the losses show up in Microsoft's filings"
+    keywords: ["Microsoft OpenAI investment 10-K equity method", "OpenAI compute commitments 2026", "Azure OpenAI revenue run rate 2026"]
+    status: queued
+  - id: intel-by-the-numbers
+    company: Intel
+    dart_name: ""
+    angle: "Intel's decline in its own numbers — foundry losses, capex, headcount, and government funding from 10-K/10-Q (2019–2026)"
+    keywords: ["Intel 10-K 2025 foundry operating loss", "Intel CHIPS Act funding 10-Q", "Intel capex 2026 guidance"]
+    status: queued

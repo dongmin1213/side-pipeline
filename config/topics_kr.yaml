@@ -1,0 +1,39 @@
+# 주제 큐 (KR 기업 흥망). status: queued | researched | scripted | produced | published | rejected
+# angle: 이 편만의 재무 각도 (편별 고유성의 핵심). dart_name: OpenDART 법인명(상장/공시 대상일 때만).
+topics:
+  - id: pasteur
+    company: 파스퇴르유업
+    dart_name: ""              # 비상장, 공시 없음 → 뉴스·판결문·롯데 인수 공시로 대체
+    angle: "70% 점유율 브랜드가 법인은 소멸한 구조 — 매출 대비 비영업 지출"
+    keywords: ["파스퇴르유업 부도", "파스퇴르 롯데 인수", "최명재 민족사관고"]
+    status: queued
+  - id: woongjin
+    company: 웅진그룹
+    dart_name: "웅진"
+    angle: "코웨이 매각·재인수·재매각의 현금흐름 — 자산 8조가 사라진 순서"
+    keywords: ["웅진 코웨이 재매각", "웅진홀딩스 법정관리 2012", "웅진 극동건설"]
+    status: queued
+  - id: pantech
+    company: 팬택
+    dart_name: "팬택"
+    angle: "국내 2위 제조사의 R&D 비중과 워크아웃 3회 — 손익계산서로 본 시점"
+    keywords: ["팬택 워크아웃", "팬택 매각 2015", "베가 아이언"]
+    status: queued
+  - id: hanjin_shipping
+    company: 한진해운
+    dart_name: "한진해운"
+    angle: "세계 7위 선사의 부채비율과 용선료 — 2016년 법정관리까지의 분기 데이터"
+    keywords: ["한진해운 법정관리", "한진해운 용선료", "한진해운 부채비율"]
+    status: queued
+  - id: daewoo
+    company: 대우그룹
+    dart_name: "대우"
+    angle: "재계 2위 해체 — 41조 분식회계의 계정과목"
+    keywords: ["대우그룹 해체 1999", "대우 분식회계 41조", "김우중"]
+    status: queued
+  - id: sunkyong_pizza
+    company: 미스터피자
+    dart_name: "MP그룹"
+    angle: "가맹점 수·매출·오너 리스크의 동시 하락 — 상장폐지까지"
+    keywords: ["미스터피자 상장폐지", "MP그룹 갑질", "미스터피자 가맹점 감소"]
+    status: queued

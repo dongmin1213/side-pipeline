@@ -1,0 +1,8 @@
+.venv/
+episodes/
+config/secrets.env
+config/yt_client_secret.json
+config/yt_token.json
+__pycache__/
+*.pyc
+*.log

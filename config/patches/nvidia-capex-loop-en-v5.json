@@ -1,0 +1,69 @@
+{
+  "note": "research/18 (Codex NO SIGN: 3·4·47 fact_refs, 32·40 third-party label / Opus FIX 3: 58 선행사, Shorts 제목 104자, 설명란 라벨↔70_publish 충돌 → 코드 수정). ",
+  "title": "Four Companies' Capex: $539B. NVIDIA Data Center Revenue: $278B. Filings Don't Connect Them.",
+  "blocks": {
+    "3": {
+      "fact_refs": [
+        "https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q4",
+        "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000066/googexhibit991q22026.htm",
+        "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000024/amzn-20260630xex991.htm",
+        "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Second-Quarter-2026-Results/default.aspx",
+        "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/R67.htm",
+        "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000230/nvda-20251026.htm",
+        "https://www.sec.gov/Archives/edgar/data/0001045810/000104581026000052/nvda-20260426.htm",
+        "https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q1",
+        "https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q2",
+        "https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q3",
+        "https://investor.atmeta.com/investor-news/press-release-details/2025/Meta-Reports-Third-Quarter-2025-Results/default.aspx",
+        "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Fourth-Quarter-and-Full-Year-2025-Results/default.aspx",
+        "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-First-Quarter-2026-Results/default.aspx"
+      ]
+    },
+    "4": {
+      "fact_refs": [
+        "https://www.sec.gov/Archives/edgar/data/1045810/000104581025000230/nvda-20251026.htm",
+        "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-fourth-quarter-and-fiscal-2026",
+        "https://www.sec.gov/Archives/edgar/data/0001045810/000104581026000052/nvda-20260426.htm",
+        "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/R67.htm",
+        "https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q2",
+        "https://s206.q4cdn.com/479360582/files/doc_events/2026/Jul/22/2026_Q2_Earnings_Transcript.pdf",
+        "https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q1",
+        "https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q3",
+        "https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q4",
+        "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000066/googexhibit991q22026.htm",
+        "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000024/amzn-20260630xex991.htm",
+        "https://investor.atmeta.com/investor-news/press-release-details/2025/Meta-Reports-Third-Quarter-2025-Results/default.aspx",
+        "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Fourth-Quarter-and-Full-Year-2025-Results/default.aspx",
+        "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-First-Quarter-2026-Results/default.aspx",
+        "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Second-Quarter-2026-Results/default.aspx"
+      ]
+    },
+    "47": {
+      "fact_refs": [
+        "https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q1",
+        "https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q2",
+        "https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q3",
+        "https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q4",
+        "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/R6.htm",
+        "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/R89.htm"
+      ]
+    },
+    "32": {
+      "narration": "Amazon's net capex rose 69 percent to 53.1 billion; a third-party transcript attributes the spending mainly to AWS and AI.",
+      "fact_refs": [
+        "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000024/amzn-20260630xex991.htm",
+        "https://www.fool.com/earnings/call-transcripts/2026/08/07/amazon-amzn-q2-2026-earnings-call-transcript/"
+      ]
+    },
+    "40": {
+      "narration": "AWS reported quarterly revenue of 42.2 billion, up 37 percent; a third-party transcript described capital spending primarily supporting AWS and AI.",
+      "fact_refs": [
+        "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000024/amzn-20260630xex991.htm",
+        "https://www.fool.com/earnings/call-transcripts/2026/08/07/amazon-amzn-q2-2026-earnings-call-transcript/"
+      ]
+    },
+    "58": {
+      "narration": "In NVIDIA's July quarter, revenue from AI clouds, industrial and enterprise customers reached 40.3 billion, up 138 percent year over year."
+    }
+  }
+}

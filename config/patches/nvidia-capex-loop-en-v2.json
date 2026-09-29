@@ -1,0 +1,118 @@
+{
+  "note": "research/13 (Codex) + research/14 (2nd Claude): title without attribution claim, description that states what the ratios do and don't measure. Block-level corrections are applied by 22_patch_facts with config/corrections/nvidia-capex-loop.json.",
+  "title": "Four Companies Reported $539 Billion in Capex. NVIDIA Booked $278 Billion. The Filings Don't Connect Them.",
+  "description": "Microsoft, Alphabet, Amazon and Meta reported about $539 billion of capital spending for calendar Q3 2025 through Q2 2026. NVIDIA's Data Center revenue for the fiscal quarters ending roughly a month later was about $278 billion. This video sets the two beside each other, quarter by quarter, and explains what the filings do and don't say: the capex measures differ by company (finance leases, net of proceeds, cash purchases), the ratios compare scale rather than measuring payments to NVIDIA or NVIDIA's share of that spending, and company forecasts are separated from reported results. Sources are SEC filings, earnings releases and earnings-call remarks; call remarks are labeled. No investment recommendation is made.",
+  "blocks": {
+    "1": {
+      "scene_prompt": "flat isometric editorial infographic, muted navy and amber palette, paper-grain texture, clean geometric shapes, no faces, no text, no logos, consistent soft lighting. SCENE: two isometric columns on separate plinths side by side: a navy column of coin discs on the left, an amber column of server crates on the right standing slightly taller; a thin baseline under each and a clear gap between them. AUDIO: ambient only. NEGATIVE: photorealism, real people, celebrity likeness, brand logos, on-screen text, captions, watermark, lip-sync"
+    },
+    "2": {
+      "scene_prompt": "flat isometric editorial infographic, muted navy and amber palette, paper-grain texture, clean geometric shapes, no faces, no text, no logos, consistent soft lighting. SCENE: left panel: a navy tower of ledger blocks with a new taller tier being set on top by a small crane; right panel, separated by a paper fold: an amber gauge tube whose fill line sits just below a zero notch. AUDIO: ambient only. NEGATIVE: photorealism, real people, celebrity likeness, brand logos, on-screen text, captions, watermark, lip-sync"
+    },
+    "3": {
+      "scene_prompt": "flat isometric editorial infographic, muted navy and amber palette, paper-grain texture, clean geometric shapes, no faces, no text, no logos, consistent soft lighting. SCENE: five isometric bars on one paper floor with separate baselines: four amber bars of unequal height grouped on the left, one navy bar on the right about half the group's combined height; nothing connects them. AUDIO: ambient only. NEGATIVE: photorealism, real people, celebrity likeness, brand logos, on-screen text, captions, watermark, lip-sync"
+    },
+    "4": {
+      "narration": "NVIDIA booked 278 billion. No filing says how much of that capex went to NVIDIA. The ratio is a comparison, not a share."
+    },
+    "6": {
+      "narration": "NVIDIA's books show about 216 billion of revenue in its fiscal 2026, almost all of it from its Data Center platform."
+    },
+    "7": {
+      "narration": "That platform reported about 194 billion, up from about 115 billion a year earlier, split between compute and networking."
+    },
+    "11": {
+      "narration": "That filing put the hyperscaler category at roughly half of data center sales. A later filing recast the category; its numbers imply about 57 percent.",
+      "fact_refs": [
+        "https://www.sec.gov/Archives/edgar/data/0001045810/000104581026000052/nvda-20260426.htm",
+        "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/R67.htm"
+      ]
+    },
+    "19": {
+      "narration": "Together, that spending came to roughly 112.5 billion. NVIDIA's Data Center revenue was 51.2 billion in its October quarter.",
+      "scene_prompt": "flat isometric editorial infographic, muted navy and amber palette, paper-grain texture, clean geometric shapes, no faces, no text, no logos, consistent soft lighting. SCENE: four navy cube stacks on separate pedestals in a row and, on a raised step to the right, one amber stack a little under half the group's combined height; a dashed vertical line marks the offset between the two baselines. AUDIO: ambient only. NEGATIVE: photorealism, real people, celebrity likeness, brand logos, on-screen text, captions, watermark, lip-sync"
+    },
+    "23": {
+      "scene_prompt": "flat isometric editorial infographic, muted navy and amber palette, paper-grain texture, clean geometric shapes, no faces, no text, no logos, consistent soft lighting. SCENE: an isometric power substation block with a thick amber cable running to a field of data-center cubes; in the background four navy bars stand side by side on separate footings, each taller than the faded outline behind it. AUDIO: ambient only. NEGATIVE: photorealism, real people, celebrity likeness, brand logos, on-screen text, captions, watermark, lip-sync"
+    },
+    "24": {
+      "narration": "NVIDIA's data center revenue for the January quarter reached 62.3 billion. Against the group's spend, the ratio read 49 percent."
+    },
+    "25": {
+      "narration": "Alphabet's first-quarter 2026 capital spending alone was about 35.7 billion, up from 27.9 billion in the quarter before.",
+      "fact_refs": [
+        "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000066/googexhibit991q22026.htm"
+      ]
+    },
+    "27": {
+      "scene_prompt": "flat isometric editorial infographic, muted navy and amber palette, paper-grain texture, clean geometric shapes, no faces, no text, no logos, consistent soft lighting. SCENE: rows of long isometric data halls with amber chip modules stacked on pallets beside them; behind, a spiral ramp of stacked crates climbs through four shaded seasonal tiers, each taller than the last. AUDIO: ambient only. NEGATIVE: photorealism, real people, celebrity likeness, brand logos, on-screen text, captions, watermark, lip-sync"
+    },
+    "31": {
+      "narration": "By the June quarter, Alphabet's capex reached about 44.9 billion, double the year-earlier figure. Meta's own outlay climbed 85 percent.",
+      "scene_prompt": "flat isometric editorial infographic, muted navy and amber palette, paper-grain texture, clean geometric shapes, no faces, no text, no logos, consistent soft lighting. SCENE: an isometric bar field where a new amber column stands at double the height of its faded twin beside it; a neighboring column climbs nearly as steeply; geometric cranes still lowering server blocks onto both tops. AUDIO: ambient only. NEGATIVE: photorealism, real people, celebrity likeness, brand logos, on-screen text, captions, watermark, lip-sync"
+    },
+    "32": {
+      "scene_prompt": "flat isometric editorial infographic, muted navy and amber palette, paper-grain texture, clean geometric shapes, no faces, no text, no logos, consistent soft lighting. SCENE: a navy warehouse complex on the left and a cloud-shaped campus of amber compute grids on the right, each on its own paper tile with a visible gap between; a bar beside the campus stands taller than a faded bar behind it. AUDIO: ambient only. NEGATIVE: photorealism, real people, celebrity likeness, brand logos, on-screen text, captions, watermark, lip-sync"
+    },
+    "34": {
+      "scene_prompt": "flat isometric editorial infographic, muted navy and amber palette, paper-grain texture, clean geometric shapes, no faces, no text, no logos, consistent soft lighting. SCENE: four amber crate stacks on a shared floor and, on a separate lower tier to the right, a navy stack about half their combined height beside a foundry-shaped building; no belts or channels connect the tiers. AUDIO: ambient only. NEGATIVE: photorealism, real people, celebrity likeness, brand logos, on-screen text, captions, watermark, lip-sync"
+    },
+    "35": {
+      "scene_prompt": "flat isometric editorial infographic, muted navy and amber palette, paper-grain texture, clean geometric shapes, no faces, no text, no logos, consistent soft lighting. SCENE: a navy tower of chip trays standing well above a faded tower beside it, a little over double its height; at its base a blank paper ledger unfolds, its crease casting a shadow that splits the tower in two. AUDIO: ambient only. NEGATIVE: photorealism, real people, celebrity likeness, brand logos, on-screen text, captions, watermark, lip-sync"
+    },
+    "36": {
+      "narration": "Hyperscalers accounted for about 48.7 billion of that revenue. AI clouds, industrial and enterprise buyers made up the rest.",
+      "scene_prompt": "flat isometric editorial infographic, muted navy and amber palette, paper-grain texture, clean geometric shapes, no faces, no text, no logos, consistent soft lighting. SCENE: the navy tower separates into two adjacent blocks on one plinth; the slightly larger block stands before four large cloud-campus silhouettes, the smaller before a scattered field of mid-sized factories, offices and small cloud buildings; no pipes or connectors. AUDIO: ambient only. NEGATIVE: photorealism, real people, celebrity likeness, brand logos, on-screen text, captions, watermark, lip-sync"
+    },
+    "39": {
+      "scene_prompt": "flat isometric editorial infographic, muted navy and amber palette, paper-grain texture, clean geometric shapes, no faces, no text, no logos, consistent soft lighting. SCENE: an isometric tank with its water level resting just beneath a marked zero notch; beside it two upright gauges, a navy one and a slightly taller amber one, standing on the same baseline; rows of server cabinets in the distance. AUDIO: ambient only. NEGATIVE: photorealism, real people, celebrity likeness, brand logos, on-screen text, captions, watermark, lip-sync"
+    },
+    "45": {
+      "scene_prompt": "flat isometric editorial infographic, muted navy and amber palette, paper-grain texture, clean geometric shapes, no faces, no text, no logos, consistent soft lighting. SCENE: a wide navy bar lying flat on a paper landscape and, on a parallel track beside it, a shorter amber bar about two thirds its length; a grid of geometric server cabinets in the background; slow drifting paper grain. AUDIO: ambient only. NEGATIVE: photorealism, real people, celebrity likeness, brand logos, on-screen text, captions, watermark, lip-sync"
+    },
+    "47": {
+      "narration": "Measured that way, the year's capital spending reached about 145 billion. Microsoft also disclosed datacenter leases that had not yet begun."
+    },
+    "53": {
+      "scene_prompt": "flat isometric editorial infographic, muted navy and amber palette, paper-grain texture, clean geometric shapes, no faces, no text, no logos, consistent soft lighting. SCENE: two isometric bins side by side with a clear gap between them, the narrow left bin slightly emptier and the wider right bin fuller; the column beside the left bin one tier shorter; a lone amber quarter-block resting on a raised step nearby. AUDIO: ambient only. NEGATIVE: photorealism, real people, celebrity likeness, brand logos, on-screen text, captions, watermark, lip-sync"
+    },
+    "54": {
+      "narration": "That call also moved datacenter and office depreciation to 25 years from 15, effective fiscal 2027. Hood said full-year capex would rise."
+    },
+    "57": {
+      "narration": "Added together, the four budgets fall between 720 and 745 billion. NVIDIA's own filing sorts its buyers differently.",
+      "fact_refs": [
+        "https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q4",
+        "https://s206.q4cdn.com/479360582/files/doc_events/2026/Jul/22/2026_Q2_Earnings_Transcript.pdf",
+        "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000024/amzn-20260630xex991.htm",
+        "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Second-Quarter-2026-Results/default.aspx"
+      ],
+      "scene_prompt": "flat isometric editorial infographic, muted navy and amber palette, paper-grain texture, clean geometric shapes, no faces, no text, no logos, consistent soft lighting. SCENE: four navy bars of unequal height standing in a row on one long plinth, a thin amber band spanning across their tops to mark a range; a taller translucent outline waiting on its own plinth to the right. AUDIO: ambient only. NEGATIVE: photorealism, real people, celebrity likeness, brand logos, on-screen text, captions, watermark, lip-sync"
+    },
+    "58": {
+      "narration": "That July quarter, its AI cloud, industrial and enterprise revenue reached 40.3 billion, up 138 percent from a year earlier.",
+      "fact_refs": [
+        "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/R67.htm"
+      ]
+    },
+    "59": {
+      "narration": "NVIDIA guided its next quarter to 108 billion of revenue, plus or minus 2 percent. Every budget shown here was revised this year.",
+      "fact_refs": [
+        "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027",
+        "https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q4",
+        "https://s206.q4cdn.com/479360582/files/doc_events/2026/Jul/22/2026_Q2_Earnings_Transcript.pdf",
+        "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000024/amzn-20260630xex991.htm",
+        "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Second-Quarter-2026-Results/default.aspx"
+      ]
+    },
+    "60": {
+      "narration": "A supplier's outlook rests on customer budgets rewritten quarter by quarter. The filings give the balances. They do not say who financed what.",
+      "fact_refs": [
+        "https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q4",
+        "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Second-Quarter-2026-Results/default.aspx",
+        "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027"
+      ],
+      "scene_prompt": "flat isometric editorial infographic, muted navy and amber palette, paper-grain texture, clean geometric shapes, no faces, no text, no logos, consistent soft lighting. SCENE: four isometric buildings and one factory arranged on separate paper tiles in a loose ring with clear gaps between them; blank lease documents lie flat on each tile as paper shapes; no belts, cables or lines connect the tiles. AUDIO: ambient only. NEGATIVE: photorealism, real people, celebrity likeness, brand logos, on-screen text, captions, watermark, lip-sync"
+    }
+  }
+}

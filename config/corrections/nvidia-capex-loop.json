@@ -1,0 +1,54 @@
+[
+ {
+  "pattern": "(?i)\\b(share|portion|slice) (was|is|of)? ?(climbing|rising|of (the )?(capex|spending))|NVIDIA'?s share of|share of (that|their|the four'?s?) (capex|spending)|\\bshare\\b.{0,30}\\bcapex\\b",
+  "note": "Ratios (46/49/51.5/52/58 percent) compare SCALE only. Never call them NVIDIA's share of capex. Say 'a scale comparison, not NVIDIA's share of spending'. No filing discloses payments to NVIDIA (facts.open_questions 4)."
+ },
+ {
+  "pattern": "(?i)(conveyor|pipe(line)?s?|streams?|rivers?|channels?|arrows?)\\b.{0,60}\\b(toward|into|to|merg|converg|collect|basin|funnel|pour)|funnel|basin|pouring into|flowing (into|toward)|nested (revenue|bar)|inside (the|a) capex|chutes?|connector lines?|pour(s|ed|ing)?\\b.{0,20}\\binto",
+  "note": "SCENE must NOT depict the four companies' money flowing/merging into NVIDIA or NVIDIA revenue nested inside a capex vessel. Use independent side-by-side panels/bars with separate baselines and a visible offset between reporting periods; no connecting payment arrows."
+ },
+ {
+  "pattern": "(?i)data center segment|the segment|one segment",
+  "note": "In NVIDIA's 10-K, 'Data Center' is a MARKET PLATFORM, not a reportable segment (segments are Compute & Networking, Graphics). Say 'Data Center market platform' or 'Data Center revenue'."
+ },
+ {
+  "pattern": "(?i)(approximately|about|around|roughly)? ?50 percent.{0,80}(57|58) percent|57 percent.{0,80}50 percent|hyperscal.{0,40}(50|57) percent",
+  "note": "Q1 FY2027 '~50 percent hyperscaler' (original 10-Q) and '~57 percent' (recast in Q2 10-Q) use DIFFERENT category definitions: NVIDIA reclassified a company from AI Clouds, Industrial & Enterprise (ACIE) to Hyperscale and recast prior-period revenue (Q2 FY27 10-Q Note 14). Do not compare them as if the share rose; state the reclassification."
+ },
+ {
+  "pattern": "(?i)(same|common|identical) (definition|measure|basis)|all four (use|report) the same|comparable capex|apples to apples",
+  "note": "The four capex measures differ: Microsoft includes finance leases (not operating leases); Alphabet = cash purchases of property and equipment; Amazon = purchases net of proceeds/incentives; Meta includes principal payments on finance leases. $539.2B is a sum of ROUNDED quarterly figures of different measures (more precise ≈ $539.1B). Say 'reported capex, defined differently by each company'."
+ },
+ {
+  "pattern": "(?i)329\\.1|three hundred twenty-nine|leases that have not (even )?(started|commenced).{0,80}billion",
+  "note": "Drop the 329.1 billion figure for leases not yet commenced — the sum scope across two lease tags is unverified. You may say Microsoft disclosed leases not yet commenced without a number."
+ },
+ {
+  "pattern": "(?i)useful li(fe|ves).{0,60}(15|25) years|(15|25) years.{0,60}useful",
+  "note": "Microsoft's change of estimated useful lives (datacenters and office buildings, 15→25 years) is effective FISCAL 2027, not the reported FY2026 quarters (Microsoft Q4 FY2026 IR)."
+ },
+ {
+  "pattern": "(?i)(more than )?doubl(ed|ing)|two times|2x|twice",
+  "note": "Microsoft cash additions to property and equipment: 44.477B (FY2024) → 64.551B (FY2025) → 115.948B (FY2026). FY2026 vs FY2025 is about 1.8x; 'more than doubled' is only true vs FY2024 — state the comparison year explicitly."
+ },
+ {
+  "pattern": "(?i)(moved|changed|revised) once|none kept (its|their) (first|original)|each changed|every (buyer|company) rewrote|complete (count|history) of revisions",
+  "note": "The selected announcements show revisions to all four outlooks but do NOT establish a complete count of revisions or the 'first' number. Say 'the announcements we compared show revised outlooks' without counting."
+ },
+ {
+  "pattern": "(?i)800 billion|1\\.3 trillion|CFO.{0,40}(800|1\\.3)",
+  "note": "The 800 billion / 1.3 trillion CFO figures come from a third-party call transcript (secondary) and are not SEC-verified. Replace with SEC-verified numbers (e.g., ACIE revenue 40.313B vs 16.928B, +138 percent) or attribute explicitly to 'a third-party transcript of the earnings call'."
+ },
+ {
+  "pattern": "(?i)grow from there|full (fiscal )?year to grow (from|beyond)",
+  "note": "Microsoft guided first-quarter fiscal-2027 capex above 50 billion dollars and full-year fiscal-2027 capex to INCREASE YEAR OVER YEAR — not 'grow from the Q1 number'."
+ },
+ {
+  "pattern": "(?i)orders (piled|concentrated|converged)|paid for with debt and leases|financed (its|their) (purchases|equipment)|borrow(ed|ing) to (pay|buy)",
+  "note": "Debt and lease balances rising at the same time as capex does not prove that specific NVIDIA purchases were financed with debt. Describe the balances and cash flows separately; do not assert a financing chain."
+ },
+ {
+  "pattern": "(?i)who paid nvidia|paid nvidia|payments? to nvidia|tracing .{0,40}back to",
+  "note": "Revenue is accrual-based and filings do not trace payments. Do not phrase revenue as cash received from named buyers."
+ }
+]
