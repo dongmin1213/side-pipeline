@@ -6,3 +6,5 @@ config/yt_token.json
 __pycache__/
 *.pyc
 *.log
+state/
+logs/

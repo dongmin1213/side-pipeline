@@ -30,6 +30,16 @@ python run_episode.py --topic pasteur --lang ko --smoke --until 6   # 유료 계
 python run_episode.py --topic pasteur --lang ko --from 3 --until 7  # 승인 → 전체 제작 → QA
 ```
 
+## hq 팀으로 실행
+hq 데몬이 `python hq_team.py`를 N분마다 실행한다 (env: `HQ_URL`, `HQ_TOKEN`, `HQ_TEAM`). 상태는 `state/hq_team.json`, 실행 로그는 `logs/hq_team.log`.
+- 대기열이 비면 `config/topics_kr.yaml`의 `queued` 주제 중 최대 3개로 **주제 선택 카드**를 올린다 (`보류` → 24시간 뒤 다시 묻기).
+- 고른 주제는 무료 단계(`run_episode.py --until 2`: 리서치·대본)를 자동 실행하고, 검토본(`review.html`)을 만든 뒤 `25_approve_script.py` 묶음으로 **대본 승인 카드**를 올린다.
+- 카드에서 `승인`하면 `APPROVE_SCRIPT`를 대신 써서 승인 게이트를 통과시킨다. `반려`하면 그 편은 멈춘다.
+- 음성·스타일 키가 아직 없으면 `waiting_paid`로 두고 준비가 끝날 때까지 매번 다시 확인한다.
+- 종료코드: 0 = 대기/완료, 3 = 승인 대기, 75 = Claude 사용 한도(다음 실행에서 이어서), 그 외 = 오류. 마지막 `STATUS:` 줄이 펫 말풍선에 뜬다.
+- hq 사용량 모드가 `normal`이 아니면 아무것도 하지 않는다.
+- **유료 단계는 팀이 절대 실행하지 않는다.** 승인 뒤 첫 유료 실행은 직접: `python run_episode.py --topic <id> --lang ko --from 4 --smoke`.
+
 ## 준비물 (사용자) — 단계별 상세 절차는 **`SETUP.md`**
 | 항목 | 방법 | 상태 |
 |---|---|---|
