@@ -1,10 +1,10 @@
 # SETUP — 사용자가 직접 해야 하는 것 (2026-09-17 기준)
 
-Claude가 대신 못 하는 것만 모았다. **단계별로 필요한 것만** 하면 된다. 각 항목에 "어디에 넣는지"를 적었다.
+Codex가 대신 못 하는 것만 모았다. **단계별로 필요한 것만** 하면 된다. 각 항목에 "어디에 넣는지"를 적었다.
 
 | 단계 | 필요한 것 | 지금 상태 |
 |---|---|---|
-| 0. 무비용(리서치·대본·정책 검사) | 없음 — Claude Max 구독의 `claude -p` 사용 | ✅ 이미 돌아감 |
+| 0. 무비용(리서치·대본·정책 검사) | 없음 — ChatGPT 구독의 `codex exec` 사용 | ✅ 이미 돌아감 |
 | 1. 유료 2블록 테스트(smoke) / 전체 제작 | Higgsfield 결제 + 로그인 + 워크스페이스 + 음성 ID | ❌ 미완 |
 | 2. 업로드(비공개) | YouTube OAuth 자격증명 | ❌ 미완 |
 | 3. 폰에서 QA 승인 (선택) | Telegram 봇 | 선택 (없으면 파일 승인) |
@@ -13,19 +13,29 @@ Claude가 대신 못 하는 것만 모았다. **단계별로 필요한 것만** 
 
 ---
 
+## 0. Codex 로그인
+
+```bash
+codex login
+codex login status
+python scripts/00_check_env.py
+```
+
+ChatGPT 로그인을 사용합니다. HQ 팀으로 실행하면 HQ가 팀 전용 인증 폴더를 제공하므로 API 키를 추가할 필요가 없습니다. 모델은 `config/pipeline.yaml`의 `llm.model`에서 바꿀 수 있습니다.
+
 ## 1. Higgsfield (유료 단계 전 필수)
 
 1. **결제**: https://higgsfield.ai/pricing 에서 플랜 선택. 첫 2블록 테스트는 Starter 로도 되지만, 스킬 문서상 Seedance 등 프리미엄 영상 모델은 Plus 이상. 실가격은 결제창에서 확인(공식 페이지가 프로그램으로 안 읽혀 문서에 가격을 못 박지 못했음).
-2. **로그인** (브라우저 OAuth라 사용자만 가능). Claude Code 프롬프트에 `!` 붙여 실행:
+2. **로그인** (브라우저 OAuth라 사용자만 가능). 터미널에서 실행:
    ```
-   ! higgsfield auth login
+   higgsfield auth login
    ```
 3. **워크스페이스 선택**:
    ```
-   ! higgsfield workspace list --json
-   ! hf workspace set <workspace_id>
+   higgsfield workspace list --json
+   hf workspace set <workspace_id>
    ```
-4. 확인: `! higgsfield account status --json` 이 오류 없이 나오면 됨. 이후는 Claude가 진행:
+4. 확인: `higgsfield account status --json` 이 오류 없이 나오면 됨. 이후는 Codex가 진행:
    - 한국어 음성 후보를 `higgsfield voices list --json` 로 뽑아 샘플 3개 생성 → 사용자가 하나 고르면 `config/pipeline.yaml` → `languages.ko.voice_id` 에 고정
    - 스타일 키 샘플 3장 생성 → 하나 고르면 `style.style_key_job_id` 에 고정
 
@@ -65,7 +75,7 @@ Claude가 대신 못 하는 것만 모았다. **단계별로 필요한 것만** 
    ```
 4. `config/pipeline.yaml` → `qa.mode: telegram`, `qa.telegram_allowed_user_ids: [<from.id>]` (이 목록의 사용자만 `/approve` 가능)
 
-없으면 기본 `qa.mode: local`: Claude가 검토본을 보여주면 파일 하나 만들어 승인
+없으면 기본 `qa.mode: local`: Codex가 검토본을 보여주면 파일 하나 만들어 승인
 ```
 echo '홍길동 <해시8자리>' > episodes/pasteur-ko/APPROVE_QA
 ```
@@ -89,4 +99,4 @@ cd pipeline && source .venv/bin/activate
 python scripts/00_check_env.py --paid          # 유료 단계 요건
 python scripts/00_check_env.py --paid --publish # 업로드 요건까지
 ```
-"환경 준비 완료" 가 나오면 Claude가 `run_episode.py --smoke --until 6` 로 2블록 테스트를 돌린다.
+"환경 준비 완료" 가 나오면 Codex가 `run_episode.py --smoke --until 6` 로 2블록 테스트를 돌린다.

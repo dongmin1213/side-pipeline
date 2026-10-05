@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""1단계 v0.2: 실제 원문을 읽는 리서치. claude_code 백엔드 + WebSearch/WebFetch 로 출처를 직접 수집하고,
+"""1단계 v0.2: 실제 원문을 읽는 리서치. Codex 백엔드 + live web_search 로 출처를 직접 수집하고,
 source URL 이 없는 수치는 facts 에서 제거한다(I1). 검증된 facts 가 최소 기준 미만이면 exit 1."""
 import argparse
 import sys
@@ -60,7 +60,7 @@ def main():
 요구: figures 최소 15개(매출·부채·인수가·점유율·시점 등), timeline 최소 10개, sources 최소 {cfg['research']['min_sources']}개(1차 출처 2개 이상).
 반드시 도구로 페이지를 열어 확인한 뒤 JSON 만 출력하라."""
     t0 = time.time()
-    facts, meta = ask_json(SYSTEM, user, tools=cfg["llm"].get("research_tools"), max_turns=cfg["llm"].get("research_max_turns", 25),
+    facts, meta = ask_json(SYSTEM, user, web_search=cfg["research"]["sources"].get("web", True),
                            ledger=ep, stage="research_llm")
     facts = verify(facts, cfg)
     facts["_meta"] = {"topic": topic, "seconds": round(time.time() - t0, 1), "llm": meta}

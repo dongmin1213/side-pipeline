@@ -1,4 +1,4 @@
-"""hq_team.py 테스트: 가짜 hq HTTP 서버 + 가짜 실행기. 실제 hq·claude·유료 단계는 호출하지 않는다."""
+"""hq_team.py 테스트: 가짜 hq HTTP 서버 + 가짜 실행기. 실제 hq·Codex·유료 단계는 호출하지 않는다."""
 import datetime as dt
 import fcntl
 import hashlib
@@ -190,10 +190,10 @@ class TestHQTeam(Base):
 
     def test_4_usage_limit(self):
         self.set_state(queue=[{"topic": "a", "lang": "ko", "status": "queued", "note": None}])
-        self.run.responses["run_episode.py"] = [(1, "[llm] 사용량 한도 추정 — 10분 대기 후 재시도\n단계 1 종료코드 1 — 중단")]
+        self.run.responses["run_episode.py"] = [(1, "Codex 사용량 한도: rate limit\n단계 1 종료코드 1 — 중단")]
         self.assertEqual(self.invoke(), 75)
         self.assertEqual(self.state()["queue"][0]["status"], "running")
-        self.assertEqual(self.last_status(), "Claude 사용 한도라 나중에 이어서 해요: 에이사")
+        self.assertEqual(self.last_status(), "Codex 사용 한도라 나중에 이어서 해요: 에이사")
 
     def test_4b_research_failure(self):
         self.set_state(queue=[{"topic": "a", "lang": "ko", "status": "queued", "note": None}])

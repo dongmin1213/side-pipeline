@@ -2,11 +2,8 @@
 project: side-content-engine
 
 llm:
-  backend: claude_code        # claude_code (claude -p, Max 구독, 키 불필요) | anthropic_api
-  claude_code_model: claude-opus-5-5   # `claude -p --model` (Max 구독). 2026-09-24 사용자 지정
-  model: claude-sonnet-5      # anthropic_api 일 때만
-  research_tools: [WebSearch, WebFetch]   # claude_code 리서치가 실제 웹을 읽음
-  research_max_turns: 25
+  backend: codex             # ChatGPT 로그인으로 codex exec 실행 (API 키 불필요)
+  model: gpt-6-astra          # 리서치·대본 품질 우선
 
 languages:
   ko:
@@ -51,7 +48,7 @@ research:
   sources:
     dart: false               # DART_API_KEY 있으면 true (상장사만 의미 있음)
     edgar: false
-    web: true                 # claude_code 백엔드의 WebSearch/WebFetch 로 원문 수집
+    web: true                 # Codex의 live web_search로 원문 수집
   min_sources: 4
   require_verified_facts: true   # source URL 없는 수치는 facts 에서 제거
 

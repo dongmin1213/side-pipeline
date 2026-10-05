@@ -254,7 +254,7 @@ class Team:
             item["status"] = "scripted"; item["note"] = None; self.save()
             return None
         if "사용량 한도" in (out or ""):
-            self.status(f"Claude 사용 한도라 나중에 이어서 해요: {name}")
+            self.status(f"Codex 사용 한도라 나중에 이어서 해요: {name}")
             return EXIT_LIMIT
         item["status"] = "failed"; item["note"] = last_line(out); self.save()
         self.status(f"대본 단계 실패: {name} — {item['note']}")

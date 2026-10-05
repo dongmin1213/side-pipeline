@@ -25,7 +25,7 @@ def main():
     cfg = load_config()
     problems = []
 
-    for cli in ("ffmpeg", "ffprobe", "yt-dlp", "higgsfield", "claude"):
+    for cli in ("ffmpeg", "ffprobe", "yt-dlp", "higgsfield", os.environ.get("HQ_CODEX_BIN", "codex")):
         if shutil.which(cli):
             print(f"OK  {cli}")
         else:
@@ -36,8 +36,18 @@ def main():
         if flt == "subtitles" and not ok and cfg["languages"]["ko"].get("subtitle"):
             problems.append("ffmpeg 에 subtitles(libass) 필터 없음 → `brew install ffmpeg-full` 또는 subtitle:false")
 
-    if cfg["llm"]["backend"] == "anthropic_api" and not os.environ.get("ANTHROPIC_API_KEY"):
-        problems.append("ANTHROPIC_API_KEY 비어 있음 (llm.backend=anthropic_api)")
+    if cfg["llm"].get("backend", "codex") != "codex":
+        problems.append("llm.backend를 codex로 설정하세요")
+    codex = os.environ.get("HQ_CODEX_BIN", "codex")
+    if shutil.which(codex):
+        try:
+            login = subprocess.run([codex, "login", "status"], capture_output=True, text=True, timeout=15)
+            if login.returncode == 0 and "logged in using chatgpt" in (login.stdout + login.stderr).lower():
+                print("OK  Codex ChatGPT 로그인")
+            else:
+                problems.append("Codex ChatGPT 로그인 필요: codex login")
+        except (OSError, subprocess.TimeoutExpired):
+            problems.append("Codex 로그인 상태 확인 실패: codex login status")
     if cfg["research"]["sources"].get("dart") and not os.environ.get("DART_API_KEY"):
         problems.append("DART_API_KEY 비어 있음")
     if cfg["qa"]["mode"] == "discord":
