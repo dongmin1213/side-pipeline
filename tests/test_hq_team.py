@@ -153,6 +153,21 @@ class TestHQTeam(Base):
         self.assertEqual(self.run.calls, [])
         self.assertIn("hq 모드: save", self.last_status())
 
+    def test_1b_unobserved_quota_still_runs(self):
+        self.hq.quota = {"mode": "unobserved"}
+        self.set_state(queue=[{"topic": "a", "lang": "ko", "status": "queued", "note": None}])
+        self.run.responses["run_episode.py"] = [(1, "검증된 자료 부족")]
+        self.assertEqual(self.invoke(), 1)
+        self.assertEqual(self.run.calls, ["run_episode.py"])
+        self.assertEqual(self.state()["queue"][0]["status"], "failed")
+        self.assertNotIn("사용량 절약", self.last_status())
+
+    def test_1c_hold_and_unknown_quota_stay_blocked(self):
+        for mode in ("hold", "unknown", None):
+            self.hq.quota = {"mode": mode}
+            self.assertEqual(self.invoke(), 0)
+            self.assertEqual(self.run.calls, [])
+
     def test_2_topic_card(self):
         self.mark_script_done("b")
         self.assertEqual(self.invoke(), 3)

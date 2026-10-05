@@ -175,7 +175,7 @@ class Team:
     def step(self):
         # 1. 사용량 모드
         mode = self.hq.quota().get("mode")
-        if mode != "normal":
+        if mode not in ("normal", "unobserved"):
             self.status(f"사용량 절약 중이라 쉬어요 (hq 모드: {mode})")
             return EXIT_OK
         # 2. 주제 카드 결정 확인
