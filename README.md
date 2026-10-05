@@ -1,7 +1,6 @@
 # content-engine v0.2 — 자동 콘텐츠 파이프라인
 
 리서치 → 대본(정책 검사) → **사람 승인** → 음성 → 클립 → 조립·자막 → **사람 QA** → 업로드(비공개).
-기획: `../research/09-final-proposal-v3.md` §D · 코드 리뷰 반영: `../research/10-codex-code-review.md` (C1~C3, I1~I16 대부분)
 
 ## 단계 (`run_episode.py` 순서)
 | # | 스크립트 | 산출물 (`episodes/<topic>-<lang>[-smoke]/`) | 비용 | 게이트 |
